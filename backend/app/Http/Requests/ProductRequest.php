@@ -23,7 +23,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required|max:200',
-            'description' => 'required',
+            'description' => 'max:1500',
             'voltage' => 'required',
             'brand_id' => 'required|int',
             'value' => 'required',

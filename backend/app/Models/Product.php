@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,6 +19,17 @@ class Product extends Model
         'main_image'
     ];
 
+    protected function value(): Attribute
+    {
+        return Attribute::make(
+            set: function (mixed $value) {
+
+                $value = format_float($value);
+
+                return (float) $value;
+            },
+        );
+    }
 
     protected static function boot()
     {
@@ -32,5 +44,10 @@ class Product extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'image_morph');
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
     }
 }

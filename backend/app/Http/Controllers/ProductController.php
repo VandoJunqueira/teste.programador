@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\Models\Brand;
 use App\Repositories\ImageRepository;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
@@ -35,7 +36,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $brands = Brand::all();
+
+        return response()->json(compact('brands'));
     }
 
     /**
@@ -58,7 +61,10 @@ class ProductController extends Controller
     public function show(string $id)
     {
         if (!$product = $this->productRepository->getById($id)) {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Produto não encontrado!'
+            ], 404);
         }
 
         return response()->json(compact('product'));
@@ -69,7 +75,14 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        if (!$product = $this->productRepository->getById($id)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Produto não encontrado!'
+            ], 404);
+        }
+        $brands = Brand::all();
+        return response()->json(compact('product', 'brands'));
     }
 
     /**
@@ -82,7 +95,10 @@ class ProductController extends Controller
     public function update(ProductRequest $request, string $id)
     {
         if (!$product = $this->productRepository->update($id, $request->all())) {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Produto não encontrado!'
+            ], 404);
         }
 
         return response()->json(compact('product'));
@@ -97,9 +113,15 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         if (!$this->productRepository->destroy($id)) {
-            return response()->json(['error' => true, 'message' => 'Product not found'], 422);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Produto não encontrado!'
+            ], 422);
         }
 
-        return response()->json(['success' => true], 200);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Produto excluido com sucesso!'
+        ], 200);
     }
 }

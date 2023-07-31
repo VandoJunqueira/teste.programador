@@ -66,7 +66,10 @@ class BrandController extends Controller
         $brand = $this->brandRepository->getById($id);
 
         if (!$brand) {
-            return response()->json(['error' => 'Brand not found'], 404);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Marca não encontrada!'
+            ], 404);
         }
 
         return response()->json(compact('brand'), 200);
@@ -94,7 +97,10 @@ class BrandController extends Controller
     public function update(BrandRequest $request, string $id)
     {
         if (!$brand = $this->brandRepository->update($id, $request->all())) {
-            return response()->json(['error' => 'Brand not found'], 404);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Marca não encontrada!'
+            ], 404);
         }
 
         return response()->json(compact('brand'));
@@ -112,18 +118,30 @@ class BrandController extends Controller
         $brand = $this->brandRepository->find($id);
 
         if (!$brand) {
-            return response()->json(['error' => 'Marca não encontrada'], 404);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Marca não encontrada!'
+            ], 404);
         }
 
         if ($brand->products()->exists()) {
             // Se houver produtos, avise o usuário que a exclusão não é permitida
-            return response()->json(['error' => 'Não é possível excluir a marca com produtos associados'], 422);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Não é possível excluir a marca com produtos associados'
+            ], 422);
         }
 
         if ($this->brandRepository->destroy($id)) {
-            return response()->json(['message' => 'Marca excluída com sucesso'], 200);
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Marca excluída com sucesso'
+            ], 200);
         }
 
-        return response()->json(['error' => 'Falha ao excluir a marca'], 500);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Falha ao excluir a marca'
+        ], 500);
     }
 }

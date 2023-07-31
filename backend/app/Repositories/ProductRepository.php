@@ -15,11 +15,11 @@ class ProductRepository extends Repository
 
     function getAll()
     {
-        return $this->model->with('images')->paginate(10);
+        return $this->model->with('images', 'brand')->paginate(5);
     }
 
     function getById(string $id)
     {
-        return $this->find($id)->load('images');
+        return $this->find($id)->load('images', 'brand');
     }
 }
