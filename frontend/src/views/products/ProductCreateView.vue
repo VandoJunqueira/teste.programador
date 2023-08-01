@@ -8,9 +8,10 @@
             <div class="card mt-3">
                 <div class="card-body">
 
+
                     <div class="row justify-content-center">
                         <div class="col-8">
-
+                            <FileUploadInput :images="product.images" @response="getImages" />
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-3">
@@ -81,18 +82,19 @@
 
 
 <script>
-
+import FileUploadInput from '../../components/FileUploadInput.vue';
 import { VMoney } from 'v-money'
 import qs from 'qs';
 
 export default {
     components: {
-        VMoney
+        VMoney, FileUploadInput
     },
     data() {
         return {
             product: {},
             brands: {},
+            images: [],
             money: this.$util.money,
         };
     },
@@ -109,6 +111,9 @@ export default {
                     let data = response.data;
                     this.product = data.product ?? {}
                     this.brands = data.brands ?? {}
+
+
+
                 });
         },
         async save(event) {
@@ -118,7 +123,7 @@ export default {
             let validate = this.$util.validate('form')
 
             if (validate) {
-
+                this.setImages()
                 // Se o product_id for null, significa que esta cadastrando um novo produto
                 if (this.product_id == null) {
                     this.$http
@@ -126,7 +131,7 @@ export default {
                         .then((response) => {
                             let data = response.data;
 
-                            this.$router.push({ name: 'products' })
+                            // this.$router.push({ name: 'products' })
                         });
                 } else {
                     this.$http
@@ -134,13 +139,32 @@ export default {
                         .then((response) => {
                             let data = response.data;
 
-                            this.$router.push({ name: 'products' })
+                            // this.$router.push({ name: 'products' })
                         });
                 }
 
 
 
             }
+        },
+        setImages() {
+            this.product.file_name = [];
+
+            if (this.product.images) {
+                this.product.images.map((image) => {
+                    this.product.file_name.push(image.src.name)
+                })
+            }
+
+            if (this.images) {
+                this.images.map((image) => {
+                    this.product.file_name.push(image.file_name)
+                })
+            }
+        },
+        getImages(response) {
+            console.log(response)
+            this.images = response
         }
     },
     mounted() {

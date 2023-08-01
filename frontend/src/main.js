@@ -5,7 +5,7 @@ import './assets/main.css'
 import util from './util'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faPlusCircle, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import axios from "axios"
 
@@ -15,7 +15,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
-library.add(faEdit, faTrash)
+library.add(faEdit, faTrash, faPlusCircle, faCheckCircle, faTimesCircle)
 
 import { createApp } from 'vue'
 import App from './App.vue'

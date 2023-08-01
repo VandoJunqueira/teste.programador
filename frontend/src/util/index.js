@@ -79,8 +79,8 @@ function date(date = 'now', format = "YYYY-MM-DD HH:mm:ss") {
 }
 
 
-function deleteByIndex(item, i) {
-    item.splice(i, 1);
+function deleteByIndex(itens, i) {
+    itens.splice(i, 1);
 }
 
 function deleteById(data, id) {

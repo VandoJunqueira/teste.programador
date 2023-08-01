@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Brand;
+use App\Models\Image;
 use App\Repositories\ImageRepository;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
@@ -99,6 +100,18 @@ class ProductController extends Controller
                 'status' => 'error',
                 'message' => 'Produto não encontrado!'
             ], 404);
+        }
+
+        $product->images()->delete();
+
+        if ($request->file_name) {
+
+
+            foreach ($request->file_name as $file) {
+                $product->images()->create([
+                    'src' => $file
+                ]);
+            }
         }
 
         return response()->json(compact('product'));

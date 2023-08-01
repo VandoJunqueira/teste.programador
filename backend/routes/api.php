@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\BrandController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/products', ProductController::class);
 Route::resource('/brands', BrandController::class);
-Route::post('/images/upload', [ImageController::class, 'upload']);
+Route::post('/upload', [UploadController::class, 'upload']);
