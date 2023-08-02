@@ -20,13 +20,13 @@ Para atender aos requisitos do teste, criei uma API em PHP utilizando o framewor
         - 3.1.2. [Cadastrar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#cadastrar)
         - 3.1.3. [Exibir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#exibir)
         - 3.1.4. [Editar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar)
-        - 3.1.5. [Excluir]()
-    - 3.2. [Endpoint Marcas]()
-        - 3.2.1 [Listar]()
-        - 3.2.2 [Cadastrar]()
-        - 3.2.3 [Exibir]()
-        - 3.2.4 [Editar]()
-        - 3.2.5 [Excluir]()
+        - 3.1.5. [Excluir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#excluir)
+    - 3.2. [Endpoint Marcas](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#endpoint-marcas)
+        - 3.2.1 [Listar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#listar-1)
+        - 3.2.2 [Cadastrar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#cadastrar-1)
+        - 3.2.3 [Exibir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#exibir-1)
+        - 3.2.4 [Editar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar-1)
+        - 3.2.5 [Excluir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar-1)
 
 
 ## Instalação Passo a passo
