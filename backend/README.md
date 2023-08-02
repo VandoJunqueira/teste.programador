@@ -31,6 +31,12 @@ Para atender aos requisitos do teste, criei uma API em PHP utilizando o framewor
 
 ## Instalação Passo a passo
 
+### Acesse a pasta backend
+
+```sh
+cd .\backend\
+```
+
 ### Clone Repositório
 
 ```sh
