@@ -9,19 +9,19 @@ Para atender aos requisitos do teste, criei uma API em PHP utilizando o framewor
     - 1.4. [Suba os containers do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#suba-os-containers-do-projeto)
     - 1.5. [Acessar o container](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-container)
     - 1.6. [Instalar as dependências do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#instalar-as-depend%C3%AAncias-do-projeto)
-    - 1.7. [Gerar a key do projeto Laravel]()
-    - 1.8. [Acessar o projeto]()
-2. [Migrations e Seeders]()
-    - 2.1. [Executar migração]()
-    - 2.2. [Executar o seeder para popular a tabela]()
-3. Rotas da API
-    - 3.1. [Eletrodomésticos]()
+    - 1.7. [Gerar a key do projeto Laravel](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#gerar-a-key-do-projeto-laravel)
+    - 1.8. [Acessar o projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-projeto)
+2. [Migrations e Seeders](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#migrations-e-seeders)
+    - 2.1. [Executar migração](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-migra%C3%A7%C3%A3o)
+    - 2.2. [Executar o seeder para popular a tabela](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-o-seeder-para-popular-a-tabela)
+3. [Rotas da API]()
+    - 3.1. [Endpoints Eletrodomésticos]()
         - 3.1.1. [Listar]()
         - 3.1.2. [Cadastrar]()
         - 3.1.3. [Exibir]()
         - 3.1.4. [Editar]()
         - 3.1.5. [Excluir]()
-    - 3.2. Marcas
+    - 3.2. [Endpoint Marcas]()
         - 3.2.1 [Listar]()
         - 3.2.2 [Cadastrar]()
         - 3.2.3 [Exibir]()
@@ -121,7 +121,9 @@ php artisan migrate
 php artisan db:seed
 ```
 
-### Eletrodomésticos
+## Rotas da API
+
+### Endpoints Eletrodomésticos
 
 #### Listar
 
@@ -151,7 +153,7 @@ Endpoint: `DELETE /api/products/{id}`
 
 Descrição: Exclui um eletrodoméstico do sistema.
 
-### Marcas
+### Endpoint Marcas
 
 #### Listar
 
