@@ -224,11 +224,30 @@ Descrição: Cadastra um novo eletrodoméstico no sistema.
 
 **BODY PARAMS**
 
-| Parâmetro | Tipo     | Obrigatório | Descrição                  |
-|-----------|----------|-------------|----------------------------|
-| name      | string   | Sim         | Nome do eletrodoméstico    |
-| age       | integer  | Não         | Idade do elemento          |
-| email     | string   | Sim         | E-mail do elemento         |
+| Parâmetro   | Tipo    | Obrigatório | Descrição                    |
+| ----------- | ------- | ----------- | ---------------------------- |
+| name        | string  | Sim         | Nome do eletrodoméstico      |
+| description | string  | Não         | Descrição do eletrodoméstico |
+| voltage     | string  | Sim         | Voltage do eletrodoméstico   |
+| brand_id    | integer | Sim         | ID da marca                  |
+| value       | double  | Sim         | Preço do eletrodoméstico     |
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "status":"success",
+        "message":"Salvo com sucesso!"
+    }
+```
+**Exemplo de resposta de erro (422 OK):**
+
+```json
+    {
+        "status":"error",
+        "message":"Erro ao salvar!"
+    }
+```
 
 #### Exibir
 
@@ -236,11 +255,77 @@ Endpoint: `GET /api/products/{id}`
 
 Descrição: Exibe os detalhes de um eletrodoméstico específico.
 
+```json
+{
+  "id": 1,
+  "name": "Geladeira French Door 514L",
+  "description": "Uma geladeira espaçosa e moderna, com design French Door, prateleiras ajustáveis, sistema de refrigeração Twin Cooling Plus, dispenser de água e gelo na porta, e iluminação LED interna.",
+  "voltage": "bivolt",
+  "brand_id": 1,
+  "value": "5000.00",
+  "main_image": "2af6eaf0a7be9dc316d18059957533ff.webp",
+  "created_at": "2023-08-02T00:57:01.000000Z",
+  "updated_at": "2023-08-02T00:57:01.000000Z",
+  "deleted_at": null,
+  "images": [
+    {
+      "id": 1,
+      "src": {
+        "full_src": "http://localhost:8989/storage/images/2af6eaf0a7be9dc316d18059957533ff.webp",
+        "name": "2af6eaf0a7be9dc316d18059957533ff.webp"
+      },
+      "created_at": "2023-08-02T00:57:01.000000Z",
+      "updated_at": "2023-08-02T00:57:01.000000Z"
+    },
+    {
+      "id": 2,
+      "src": {
+        "full_src": "http://localhost:8989/storage/images/a16f8f6f97336804fc6b69bf5c8f3795.webp",
+        "name": "a16f8f6f97336804fc6b69bf5c8f3795.webp"
+      },
+      "created_at": "2023-08-02T00:57:01.000000Z",
+      "updated_at": "2023-08-02T00:57:01.000000Z"
+    }
+  ],
+  "brand": {
+    "id": 1,
+    "name": "Samsung",
+    "created_at": "2023-08-02T00:57:00.000000Z",
+    "updated_at": null,
+    "deleted_at": null
+  }
+}
+```
 #### Editar
 
 Endpoint: `PUT /api/products/{id}`
 
 Descrição: Edita as informações de um eletrodoméstico existente.
+
+| Parâmetro   | Tipo    | Obrigatório | Descrição                    |
+| ----------- | ------- | ----------- | ---------------------------- |
+| name        | string  | Sim         | Nome do eletrodoméstico      |
+| description | string  | Não         | Descrição do eletrodoméstico |
+| voltage     | string  | Sim         | Voltage do eletrodoméstico   |
+| brand_id    | integer | Sim         | ID da marca                  |
+| value       | double  | Sim         | Preço do eletrodoméstico     |
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "status":"success",
+        "message":"Salvo com sucesso!"
+    }
+```
+**Exemplo de resposta de erro (422 ERROR):**
+
+```json
+    {
+        "status":"error",
+        "message":"Erro ao salvar!"
+    }
+```
 
 #### Excluir
 
@@ -248,34 +333,162 @@ Endpoint: `DELETE /api/products/{id}`
 
 Descrição: Exclui um eletrodoméstico do sistema.
 
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "status":"success",
+        "message":"Produto excluido com sucesso!"
+    }
+```
+**Exemplo de resposta de erro (404 ERROR):**
+
+```json
+    {
+        "status":"error",
+        "message":"Produto não encontrado!"
+    }
+```
+
 ### Endpoint Marcas
 
 #### Listar
 
-  Endpoint: `GET /api/brands`
+Endpoint: `GET /api/brands`
 
-  Descrição: Retorna a lista de todas as marcas cadastradas.
+Descrição: Retorna a lista de todas as marcas cadastradas.
 
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+[
+    {
+      "id": 1,
+      "name": "Samsung",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "name": "LG",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "name": "Electrolux",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "name": "Brastemp",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "name": "Philips",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    }
+]
+```
+**Exemplo de resposta de erro (404 ERROR):**
+
+```json
+    {
+        "status":"error",
+        "message":"Produto não encontrado!"
+    }
+```
 #### Cadastrar
 
-  Endpoint: `POST /api/brands`
+Endpoint: `POST /api/brands`
 
-  Descrição: Cadastra uma nova marca no sistema.
+Descrição: Cadastra uma nova marca no sistema.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "status":"success",
+        "message":"Salvo com sucesso!"
+    }
+```
+**Exemplo de resposta de erro (422 ERROR):**
+
+```json
+    {
+        "status":"error",
+        "message":"Erro ao salvar!"
+    }
+```
 
 #### Exibir
 
-  Endpoint: `GET /api/brands/{id}`
+Endpoint: `GET /api/brands/{id}`
 
-  Descrição: Exibe os detalhes de uma marca específica.
+Descrição: Exibe os detalhes de uma marca específica.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "status":"success",
+        "message":"Salvo com sucesso!"
+    }
+```
+**Exemplo de resposta de erro (422 ERROR):**
+
+```json
+    {
+        "status":"error",
+        "message":"Erro ao salvar!"
+    }
+```
 
 #### Editar
 
-  Endpoint: `PUT /api/brands/{id}`
+Endpoint: `PUT /api/brands/{id}`
 
-  Descrição: Edita as informações de uma marca existente.
+Descrição: Edita as informações de uma marca existente.
 
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "id": 2,
+        "name": "LG",
+        "created_at": "2023-08-02T00:57:00.000000Z",
+        "updated_at": "2023-08-02T00:57:00.000000Z",
+        "deleted_at": null
+    }
+```
 #### Excluir
 
-  Endpoint: `DELETE /api/brands/{id}`
+Endpoint: `DELETE /api/brands/{id}`
 
-  Descrição: Exclui uma marca do sistema.
+Descrição: Exclui uma marca do sistema.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+    {
+        "status":"success",
+        "message":"Produto excluido com sucesso!"
+    }
+```
+**Exemplo de resposta de erro (404 ERROR):**
+
+```json
+    {
+        "status":"error",
+        "message":"Produto não encontrado!"
+    }
+```
