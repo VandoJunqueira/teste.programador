@@ -70,7 +70,7 @@ export default {
                 .get('/brands?page=' + page)
                 .then((response) => {
                     let data = response.data;
-                    this.brands = data.brands
+                    this.brands = data
 
                     this.$store.commit('setLoading', { status: false })
                 });

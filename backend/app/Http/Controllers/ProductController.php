@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $products = $this->productRepository->getAll();
 
-        return response()->json(compact('products'));
+        return response()->json($products);
     }
 
     /**
@@ -50,14 +50,29 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $product = $this->productRepository->store($request->all());
 
-        if ($request->file_name) {
-            foreach ($request->file_name as $file) {
-                $product->images()->create([
-                    'src' => $file
-                ]);
+
+        try {
+
+            $product = $this->productRepository->store($request->all());
+
+            if ($request->file_name) {
+                foreach ($request->file_name as $file) {
+                    $product->images()->create([
+                        'src' => $file
+                    ]);
+                }
             }
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Salvo com sucesso!'
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Erro ao salvar!'
+            ], 422);
         }
     }
 
@@ -76,7 +91,7 @@ class ProductController extends Controller
             ], 404);
         }
 
-        return response()->json(compact('product'));
+        return response()->json($product);
     }
 
     /**
@@ -120,7 +135,10 @@ class ProductController extends Controller
             }
         }
 
-        return response()->json(compact('product'));
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Salvo com sucesso!'
+        ], 200);
     }
 
     /**

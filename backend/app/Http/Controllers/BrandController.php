@@ -29,7 +29,7 @@ class BrandController extends Controller
     public function index()
     {
         $brands = $this->brandRepository->getAll();
-        return response()->json(compact('brands'), 200);
+        return response()->json($brands, 200);
     }
 
     /**
@@ -51,8 +51,18 @@ class BrandController extends Controller
      */
     public function store(BrandRequest $request)
     {
-        $brand = $this->brandRepository->store($request->all());
-        return response()->json(compact('brand'), 200);
+        try {
+            $brand = $this->brandRepository->store($request->all());
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Salvo com sucesso!'
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Erro ao salvar!'
+            ], 422);
+        }
     }
 
     /**
@@ -72,7 +82,7 @@ class BrandController extends Controller
             ], 404);
         }
 
-        return response()->json(compact('brand'), 200);
+        return response()->json($brand, 200);
     }
 
     /**
@@ -96,14 +106,17 @@ class BrandController extends Controller
      */
     public function update(BrandRequest $request, string $id)
     {
-        if (!$brand = $this->brandRepository->update($id, $request->all())) {
+        if (!$this->brandRepository->update($id, $request->all())) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Marca não encontrada!'
             ], 404);
         }
 
-        return response()->json(compact('brand'));
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Salvo com sucesso!'
+        ], 200);
     }
 
     /**

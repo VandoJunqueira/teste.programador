@@ -53,7 +53,7 @@ export default {
                     .get('/brands/' + this.brand_id)
                     .then((response) => {
                         let data = response.data;
-                        this.brand = data.brand ?? {}
+                        this.brand = data ?? {}
                         this.$store.commit('setLoading', { status: false })
                     });
             }
@@ -76,20 +76,28 @@ export default {
                         .post('/brands', qs.stringify(this.brand))
                         .then((response) => {
                             let data = response.data;
-
+                            this.$util.toast(data)
                             this.$store.commit('setLoading', { status: false })
                             this.$router.push({ name: 'brands' })
-
-                            this.$util.toast({ st })
+                        }).catch(error => {
+                            if (error.response && (error.response.status === 422 || error.response.status === 404)) {
+                                this.$util.toast(error.response.data)
+                                this.$store.commit('setLoading', { status: false })
+                            }
                         });
                 } else {
                     this.$http
                         .put('/brands/' + this.brand_id, qs.stringify(this.brand))
                         .then((response) => {
                             let data = response.data;
-
+                            this.$util.toast(data)
                             this.$store.commit('setLoading', { status: false })
                             this.$router.push({ name: 'brands' })
+                        }).catch(error => {
+                            if (error.response && (error.response.status === 422 || error.response.status === 404)) {
+                                this.$util.toast(error.response.data)
+                                this.$store.commit('setLoading', { status: false })
+                            }
                         });
                 }
 

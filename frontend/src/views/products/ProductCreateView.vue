@@ -133,10 +133,16 @@ export default {
                         .then((response) => {
                             let data = response.data;
 
+                            this.$util.toast(data)
                             this.$store.commit('setLoading', { status: false })
                             this.$router.push({ name: 'products' })
 
-                            this.$util.toast({st})
+
+                        }).catch(error => {
+                            if (error.response && (error.response.status === 422 || error.response.status === 404)) {
+                                this.$util.toast(error.response.data)
+                                this.$store.commit('setLoading', { status: false })
+                            }
                         });
                 } else {
                     this.$http
@@ -144,8 +150,14 @@ export default {
                         .then((response) => {
                             let data = response.data;
 
+                            this.$util.toast(data)
                             this.$store.commit('setLoading', { status: false })
                             this.$router.push({ name: 'products' })
+                        }).catch(error => {
+                            if (error.response && (error.response.status === 422 || error.response.status === 404)) {
+                                this.$util.toast(error.response.data)
+                                this.$store.commit('setLoading', { status: false })
+                            }
                         });
                 }
 

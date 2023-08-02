@@ -24,7 +24,7 @@
 
 <style scope>
 .loading-backdrop {
-  z-index: 100000;
+  z-index: 1000;
 }
 </style>
 

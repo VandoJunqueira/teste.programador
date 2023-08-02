@@ -81,7 +81,7 @@ export default {
                 .get('/products?page=' + page)
                 .then((response) => {
                     let data = response.data;
-                    this.products = data.products
+                    this.products = data
 
                     this.$store.commit('setLoading', { status: false })
                 });

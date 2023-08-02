@@ -1,66 +1,500 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Para atender aos requisitos do teste, criei uma API em PHP utilizando o framework Laravel na versão 10 e um banco de dados relacional para o cadastro de eletrodomésticos.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# SUMÁRIO
 
-## About Laravel
+1. [Instalação Passo a passo](https://github.com/VandoJunqueira/teste.programador/tree/main/backend#instala%C3%A7%C3%A3o-passo-a-passo)
+    - 1.1. [Clone Repositório](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#clone-reposit%C3%B3rio)
+    - 1.2. [Crie o Arquivo .env](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#crie-o-arquivo-env)
+    - 1.3. [Atualize as variáveis de ambiente do arquivo .env](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#atualize-as-vari%C3%A1veis-de-ambiente-do-arquivo-env)
+    - 1.4. [Suba os containers do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#suba-os-containers-do-projeto)
+    - 1.5. [Acessar o container](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-container)
+    - 1.6. [Instalar as dependências do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#instalar-as-depend%C3%AAncias-do-projeto)
+    - 1.7. [Gerar a key do projeto Laravel](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#gerar-a-key-do-projeto-laravel)
+    - 1.8. [Acessar o projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-projeto)
+2. [Migrations e Seeders](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#migrations-e-seeders)
+    - 2.1. [Executar migração](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-migra%C3%A7%C3%A3o)
+    - 2.2. [Executar o seeder para popular a tabela](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-o-seeder-para-popular-a-tabela)
+3. [Rotas da API](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#rotas-da-api)
+    - 3.1. [Endpoints Eletrodomésticos](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#endpoints-eletrodom%C3%A9sticos)
+        - 3.1.1. [Listar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#listar)
+        - 3.1.2. [Cadastrar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#cadastrar)
+        - 3.1.3. [Exibir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#exibir)
+        - 3.1.4. [Editar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar)
+        - 3.1.5. [Excluir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#excluir)
+    - 3.2. [Endpoint Marcas](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#endpoint-marcas)
+        - 3.2.1 [Listar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#listar-1)
+        - 3.2.2 [Cadastrar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#cadastrar-1)
+        - 3.2.3 [Exibir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#exibir-1)
+        - 3.2.4 [Editar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar-1)
+        - 3.2.5 [Excluir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar-1)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Instalação Passo a passo
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Clone Repositório
 
-## Learning Laravel
+```sh
+git clone https://github.com/VandoJunqueira/teste.programador.git
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Acesse a pasta backend
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```sh
+cd .\backend\
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Crie o Arquivo .env
 
-## Laravel Sponsors
+```sh
+cp .env.example .env
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Atualize as variáveis de ambiente do arquivo .env
 
-### Premium Partners
+```dosini
+APP_NAME="Teste Desenvolvedor Fullstack (PHP)"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost:8989
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
 
-## Contributing
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+CACHE_DRIVER=redis
+QUEUE_CONNECTION=redis
+SESSION_DRIVER=redis
 
-## Code of Conduct
+REDIS_HOST=redis
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+```
 
-## Security Vulnerabilities
+### Suba os containers do projeto
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```sh
+docker-compose up -d
+```
 
-## License
+### Acessar o container
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```sh
+docker-compose exec app bash
+```
+
+### Instalar as dependências do projeto
+
+```sh
+composer install
+```
+
+### Gerar a key do projeto Laravel
+
+```sh
+php artisan key:generate
+```
+
+### Acessar o projeto
+
+[http://localhost:8989](http://localhost:8989)
+
+## Migrations e Seeders
+
+### Executar migração
+
+```sh
+php artisan migrate
+```
+
+### Executar o seeder para popular a tabela
+
+```sh
+php artisan db:seed
+```
+
+## Rotas da API
+
+### Endpoints Eletrodomésticos
+
+#### Listar
+
+Endpoint: `GET /api/products`
+
+Descrição: Retorna a lista de todos os eletrodomésticos cadastrados.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+[
+    {
+        "id": 15,
+        "name": "Cafeteira Expresso Autom\u00e1tica",
+        "description": "Cafeteira autom\u00e1tica que prepara diversos tipos de caf\u00e9 expresso com um toque, moedor de gr\u00e3os integrado e bico de vapor.",
+        "voltage": "bivolt",
+        "brand_id": 5,
+        "value": "900.00",
+        "main_image": "71APp0IvbLL._AC_SL1500_.jpg",
+        "created_at": "2023-08-02T00:57:01.000000Z",
+        "updated_at": "2023-08-02T00:57:03.000000Z",
+        "deleted_at": null,
+        "images": [
+            {
+                "id": 29,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/71APp0IvbLL._AC_SL1500_.jpg",
+                    "name": "71APp0IvbLL._AC_SL1500_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            },
+            {
+                "id": 30,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/61WjyYLSzAL._AC_SL1000_.jpg",
+                    "name": "61WjyYLSzAL._AC_SL1000_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            }
+        ],
+        "brand": {
+            "id": 5,
+            "name": "Philips",
+            "created_at": "2023-08-02T00:57:00.000000Z",
+            "updated_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "id": 14,
+        "name": "Ferro de Passar a Vapor",
+        "description": "Ferro a vapor com base antiaderente, sistema de vapor cont\u00ednuo e fun\u00e7\u00e3o de spray.",
+        "voltage": "bivolt",
+        "brand_id": 5,
+        "value": "80.00",
+        "main_image": "71jMtNo9U-L._AC_SL1500_.jpg",
+        "created_at": "2023-08-02T00:57:01.000000Z",
+        "updated_at": "2023-08-02T00:57:03.000000Z",
+        "deleted_at": null,
+        "images": [
+            {
+                "id": 27,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/71jMtNo9U-L._AC_SL1500_.jpg",
+                    "name": "71jMtNo9U-L._AC_SL1500_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            },
+            {
+                "id": 28,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/71z8x+AjGsL._AC_SL1500_.jpg",
+                    "name": "71z8x+AjGsL._AC_SL1500_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            }
+        ],
+        "brand": {
+            "id": 5,
+            "name": "Philips",
+            "created_at": "2023-08-02T00:57:00.000000Z",
+            "updated_at": null,
+            "deleted_at": null
+        }
+    },
+]
+```
+
+#### Cadastrar
+
+Endpoint: `POST /api/products`
+
+Descrição: Cadastra um novo eletrodoméstico no sistema.
+
+**BODY PARAMS**
+
+| Parâmetro   | Tipo    | Obrigatório | Descrição                    |
+| ----------- | ------- | ----------- | ---------------------------- |
+| name        | string  | Sim         | Nome do eletrodoméstico      |
+| description | string  | Não         | Descrição do eletrodoméstico |
+| voltage     | string  | Sim         | Voltage do eletrodoméstico   |
+| brand_id    | integer | Sim         | ID da marca                  |
+| value       | double  | Sim         | Preço do eletrodoméstico     |
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
+```
+**Exemplo de resposta de erro (422 OK):**
+
+```json
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
+```
+
+#### Exibir
+
+Endpoint: `GET /api/products/{id}`
+
+Descrição: Exibe os detalhes de um eletrodoméstico específico.
+
+```json
+{
+  "id": 1,
+  "name": "Geladeira French Door 514L",
+  "description": "Uma geladeira espaçosa e moderna, com design French Door, prateleiras ajustáveis, sistema de refrigeração Twin Cooling Plus, dispenser de água e gelo na porta, e iluminação LED interna.",
+  "voltage": "bivolt",
+  "brand_id": 1,
+  "value": "5000.00",
+  "main_image": "2af6eaf0a7be9dc316d18059957533ff.webp",
+  "created_at": "2023-08-02T00:57:01.000000Z",
+  "updated_at": "2023-08-02T00:57:01.000000Z",
+  "deleted_at": null,
+  "images": [
+    {
+      "id": 1,
+      "src": {
+        "full_src": "http://localhost:8989/storage/images/2af6eaf0a7be9dc316d18059957533ff.webp",
+        "name": "2af6eaf0a7be9dc316d18059957533ff.webp"
+      },
+      "created_at": "2023-08-02T00:57:01.000000Z",
+      "updated_at": "2023-08-02T00:57:01.000000Z"
+    },
+    {
+      "id": 2,
+      "src": {
+        "full_src": "http://localhost:8989/storage/images/a16f8f6f97336804fc6b69bf5c8f3795.webp",
+        "name": "a16f8f6f97336804fc6b69bf5c8f3795.webp"
+      },
+      "created_at": "2023-08-02T00:57:01.000000Z",
+      "updated_at": "2023-08-02T00:57:01.000000Z"
+    }
+  ],
+  "brand": {
+    "id": 1,
+    "name": "Samsung",
+    "created_at": "2023-08-02T00:57:00.000000Z",
+    "updated_at": null,
+    "deleted_at": null
+  }
+}
+```
+#### Editar
+
+Endpoint: `PUT /api/products/{id}`
+
+Descrição: Edita as informações de um eletrodoméstico existente.
+
+| Parâmetro   | Tipo    | Obrigatório | Descrição                    |
+| ----------- | ------- | ----------- | ---------------------------- |
+| name        | string  | Sim         | Nome do eletrodoméstico      |
+| description | string  | Não         | Descrição do eletrodoméstico |
+| voltage     | string  | Sim         | Voltage do eletrodoméstico   |
+| brand_id    | integer | Sim         | ID da marca                  |
+| value       | double  | Sim         | Preço do eletrodoméstico     |
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
+```
+**Exemplo de resposta de erro (422 ERROR):**
+
+```json
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
+```
+
+#### Excluir
+
+Endpoint: `DELETE /api/products/{id}`
+
+Descrição: Exclui um eletrodoméstico do sistema.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "status":"success",
+    "message":"Produto excluido com sucesso!"
+}
+```
+**Exemplo de resposta de erro (404 ERROR):**
+
+```json
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
+```
+
+### Endpoint Marcas
+
+#### Listar
+
+Endpoint: `GET /api/brands`
+
+Descrição: Retorna a lista de todas as marcas cadastradas.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+[
+    {
+      "id": 1,
+      "name": "Samsung",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 2,
+      "name": "LG",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 3,
+      "name": "Electrolux",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 4,
+      "name": "Brastemp",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    },
+    {
+      "id": 5,
+      "name": "Philips",
+      "created_at": "2023-08-02T00:57:00.000000Z",
+      "updated_at": "2023-08-02T00:57:00.000000Z",
+      "deleted_at": null
+    }
+]
+```
+**Exemplo de resposta de erro (404 ERROR):**
+
+```json
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
+```
+#### Cadastrar
+
+Endpoint: `POST /api/brands`
+
+Descrição: Cadastra uma nova marca no sistema.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
+```
+**Exemplo de resposta de erro (422 ERROR):**
+
+```json
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
+```
+
+#### Exibir
+
+Endpoint: `GET /api/brands/{id}`
+
+Descrição: Exibe os detalhes de uma marca específica.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
+```
+**Exemplo de resposta de erro (422 ERROR):**
+
+```json
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
+```
+
+#### Editar
+
+Endpoint: `PUT /api/brands/{id}`
+
+Descrição: Edita as informações de uma marca existente.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "id": 2,
+    "name": "LG",
+    "created_at": "2023-08-02T00:57:00.000000Z",
+    "updated_at": "2023-08-02T00:57:00.000000Z",
+    "deleted_at": null
+}
+```
+#### Excluir
+
+Endpoint: `DELETE /api/brands/{id}`
+
+Descrição: Exclui uma marca do sistema.
+
+**Exemplo de resposta de sucesso (200 OK):**
+
+```json
+{
+    "status":"success",
+    "message":"Produto excluido com sucesso!"
+}
+```
+**Exemplo de resposta de erro (404 ERROR):**
+
+```json
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
+```
