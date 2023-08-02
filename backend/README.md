@@ -131,7 +131,7 @@ Endpoint: `GET /api/products`
 
 Descrição: Retorna a lista de todos os eletrodomésticos cadastrados.
 
-**Exemplo de retorno:**
+**Retorno: 200**
 
 ```json
 [
@@ -219,6 +219,14 @@ Descrição: Retorna a lista de todos os eletrodomésticos cadastrados.
 #### Cadastrar
 
 Endpoint: `POST /api/products`
+
+Descrição: Cadastra um novo eletrodoméstico no sistema.
+
+** BODY PARAMS **
+
+```
+name string *required*
+```
 
 #### Exibir
 
