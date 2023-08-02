@@ -131,7 +131,7 @@ Endpoint: `GET /api/products`
 
 Descrição: Retorna a lista de todos os eletrodomésticos cadastrados.
 
-**Retorno: 200**
+**Exemplo de resposta de sucesso (200 OK):**
 
 ```json
 [
@@ -235,18 +235,18 @@ Descrição: Cadastra um novo eletrodoméstico no sistema.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "status":"success",
-        "message":"Salvo com sucesso!"
-    }
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
 ```
 **Exemplo de resposta de erro (422 OK):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Erro ao salvar!"
-    }
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
 ```
 
 #### Exibir
@@ -313,18 +313,18 @@ Descrição: Edita as informações de um eletrodoméstico existente.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "status":"success",
-        "message":"Salvo com sucesso!"
-    }
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
 ```
 **Exemplo de resposta de erro (422 ERROR):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Erro ao salvar!"
-    }
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
 ```
 
 #### Excluir
@@ -336,18 +336,18 @@ Descrição: Exclui um eletrodoméstico do sistema.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "status":"success",
-        "message":"Produto excluido com sucesso!"
-    }
+{
+    "status":"success",
+    "message":"Produto excluido com sucesso!"
+}
 ```
 **Exemplo de resposta de erro (404 ERROR):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Produto não encontrado!"
-    }
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
 ```
 
 ### Endpoint Marcas
@@ -402,10 +402,10 @@ Descrição: Retorna a lista de todas as marcas cadastradas.
 **Exemplo de resposta de erro (404 ERROR):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Produto não encontrado!"
-    }
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
 ```
 #### Cadastrar
 
@@ -416,18 +416,18 @@ Descrição: Cadastra uma nova marca no sistema.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "status":"success",
-        "message":"Salvo com sucesso!"
-    }
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
 ```
 **Exemplo de resposta de erro (422 ERROR):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Erro ao salvar!"
-    }
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
 ```
 
 #### Exibir
@@ -439,18 +439,18 @@ Descrição: Exibe os detalhes de uma marca específica.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "status":"success",
-        "message":"Salvo com sucesso!"
-    }
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
 ```
 **Exemplo de resposta de erro (422 ERROR):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Erro ao salvar!"
-    }
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
 ```
 
 #### Editar
@@ -462,13 +462,13 @@ Descrição: Edita as informações de uma marca existente.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "id": 2,
-        "name": "LG",
-        "created_at": "2023-08-02T00:57:00.000000Z",
-        "updated_at": "2023-08-02T00:57:00.000000Z",
-        "deleted_at": null
-    }
+{
+    "id": 2,
+    "name": "LG",
+    "created_at": "2023-08-02T00:57:00.000000Z",
+    "updated_at": "2023-08-02T00:57:00.000000Z",
+    "deleted_at": null
+}
 ```
 #### Excluir
 
@@ -479,16 +479,16 @@ Descrição: Exclui uma marca do sistema.
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
-    {
-        "status":"success",
-        "message":"Produto excluido com sucesso!"
-    }
+{
+    "status":"success",
+    "message":"Produto excluido com sucesso!"
+}
 ```
 **Exemplo de resposta de erro (404 ERROR):**
 
 ```json
-    {
-        "status":"error",
-        "message":"Produto não encontrado!"
-    }
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
 ```
