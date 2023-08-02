@@ -1,31 +1,30 @@
 # SUMÁRIO
 
-1. Instalação Passo a passo
-    - 1.1. Clone Repositório
-    - 1.2. Crie o Arquivo .env
-    - 1.3. Atualize as variáveis de ambiente do arquivo .env
-    - 1.4. Suba os containers do projeto
-    - 1.5. Acessar o container
-    - 1.6. Instalar as dependências do projeto
-    - 1.7. Gerar a key do projeto Laravel
-    - 1.8. Acessar o projeto
-2. Migrates e Seeders
-    - 2.1. Executar migrate
-    - 2.2. Popular a tabela com o seed
+1. [Instalação Passo a passo](https://github.com/VandoJunqueira/teste.programador/tree/main/backend#instala%C3%A7%C3%A3o-passo-a-passo)
+    - 1.1. [Clone Repositório](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#clone-reposit%C3%B3rio)
+    - 1.2. [Crie o Arquivo .env](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#crie-o-arquivo-env)
+    - 1.3. [Atualize as variáveis de ambiente do arquivo .env](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#atualize-as-vari%C3%A1veis-de-ambiente-do-arquivo-env)
+    - 1.4. [Suba os containers do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#suba-os-containers-do-projeto)
+    - 1.5. [Acessar o container](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-container)
+    - 1.6. [Instalar as dependências do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#instalar-as-depend%C3%AAncias-do-projeto)
+    - 1.7. [Gerar a key do projeto Laravel]()
+    - 1.8. [Acessar o projeto]()
+2. [Migrates e Seeders]()
+    - 2.1. [Executar migrate]()
+    - 2.2. [Popular a tabela com o seed]()
 3. Rotas
-    - 3.1. Eletrodomesticos
-        - 3.1.1. Listar
-        - 3.1.2. Cadastrar
-        - 3.1.3. Exibir
-        - 3.1.4. Editar
-        - 3.1.5. Excluir
+    - 3.1. [Eletrodomesticos]()
+        - 3.1.1. [Listar]()
+        - 3.1.2. [Cadastrar]()
+        - 3.1.3. [Exibir]()
+        - 3.1.4. [Editar]()
+        - 3.1.5. [Excluir]()
     - 3.2. Marcas
-        - 3.2.1 Listar
-        - 3.2.2 Cadastrar
-        - 3.2.3 Exibir
-        - 3.2.4 Editar
-        - 3.2.5 Excluir
-4. Acessar o projeto
+        - 3.2.1 [Listar]()
+        - 3.2.2 [Cadastrar]()
+        - 3.2.3 [Exibir]()
+        - 3.2.4 [Editar]()
+        - 3.2.5 [Excluir]()
 
 
 ## Instalação Passo a passo
