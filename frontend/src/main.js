@@ -3,6 +3,7 @@ import 'bootstrap';
 import './assets/main.css'
 
 import util from './util'
+import store from './store'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEdit, faTrash, faPlusCircle, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
@@ -28,6 +29,7 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router)
 app.use(VueSweetalert2);
 app.use(Toast);
+app.use(store);
 
 axios.defaults.baseURL = 'http://localhost:8989/api'
 app.config.globalProperties.$http = axios;

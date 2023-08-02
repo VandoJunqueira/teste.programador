@@ -15,7 +15,7 @@ class ProductRepository extends Repository
 
     function getAll()
     {
-        return $this->model->with('images', 'brand')->paginate(5);
+        return $this->model->with('images', 'brand')->orderBy('id', 'DESC')->paginate(10);
     }
 
     function getById(string $id)

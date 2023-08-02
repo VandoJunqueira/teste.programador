@@ -23,7 +23,7 @@ class BrandRepository extends Repository
             return $query->get();
         } else {
             // Caso contrário, retorne os resultados paginados.
-            return $query->paginate(5);
+            return $query->paginate(10);
         }
     }
 

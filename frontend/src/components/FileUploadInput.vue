@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="overflow-x-auto">
         <label class="fw-bold">Imagens</label>
         <div class="d-flex">
             <div
@@ -182,6 +182,7 @@ export default {
 .preview .img {
     height: 120px;
     width: 120px;
+    min-width: 120px;
 }
 
 #fileInput {
@@ -214,6 +215,9 @@ export default {
     right: 5px;
     margin: 3px;
     top: 0;
+}
+.overflow-x-auto{
+    overflow-x: auto;
 }
 </style>
   

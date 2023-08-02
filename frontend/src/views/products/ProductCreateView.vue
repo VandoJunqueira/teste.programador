@@ -7,10 +7,8 @@
         <form id="form">
             <div class="card mt-3">
                 <div class="card-body">
-
-
                     <div class="row justify-content-center">
-                        <div class="col-8">
+                        <div class="col-md-8">
                             <FileUploadInput :images="product.images" @response="getImages" />
                             <div class="row">
                                 <div class="col-12">
@@ -21,7 +19,7 @@
                                             id="name" placeholder="Digite o nome do Eletrodoméstico" required>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-12">
                                     <div class="mb-3">
                                         <label for="brand" class="form-label fw-bold">Marca <span
                                                 class="text-danger">*</span></label>
@@ -34,7 +32,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-12">
                                     <div class="mb-3">
                                         <label for="value" class="form-label fw-bold">Preço <span
                                                 class="text-danger">*</span></label>
@@ -42,7 +40,7 @@
                                             id="value" v-money.lazy="money" required>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-md-4 col-12">
                                     <div class="mb-3">
                                         <label for="voltage" class="form-label fw-bold">Voltagem <span
                                                 class="text-danger">*</span></label>
@@ -100,7 +98,7 @@ export default {
     },
     methods: {
         async init() {
-
+            this.$store.commit('setLoading', { status: true })
             let url = '/products/create'
 
             if (this.product_id != null) { url = '/products/' + this.product_id + '/edit' }
@@ -111,7 +109,7 @@ export default {
                     let data = response.data;
                     this.product = data.product ?? {}
                     this.brands = data.brands ?? {}
-
+                    this.$store.commit('setLoading', { status: false })
 
 
                 });
@@ -123,7 +121,11 @@ export default {
             let validate = this.$util.validate('form')
 
             if (validate) {
+
+                this.$store.commit('setLoading', { status: true })
+
                 this.setImages()
+
                 // Se o product_id for null, significa que esta cadastrando um novo produto
                 if (this.product_id == null) {
                     this.$http
@@ -131,7 +133,10 @@ export default {
                         .then((response) => {
                             let data = response.data;
 
-                            // this.$router.push({ name: 'products' })
+                            this.$store.commit('setLoading', { status: false })
+                            this.$router.push({ name: 'products' })
+
+                            this.$util.toast({st})
                         });
                 } else {
                     this.$http
@@ -139,7 +144,8 @@ export default {
                         .then((response) => {
                             let data = response.data;
 
-                            // this.$router.push({ name: 'products' })
+                            this.$store.commit('setLoading', { status: false })
+                            this.$router.push({ name: 'products' })
                         });
                 }
 

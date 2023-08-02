@@ -50,7 +50,15 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $this->productRepository->store($request->all());
+        $product = $this->productRepository->store($request->all());
+
+        if ($request->file_name) {
+            foreach ($request->file_name as $file) {
+                $product->images()->create([
+                    'src' => $file
+                ]);
+            }
+        }
     }
 
     /**
@@ -105,8 +113,6 @@ class ProductController extends Controller
         $product->images()->delete();
 
         if ($request->file_name) {
-
-
             foreach ($request->file_name as $file) {
                 $product->images()->create([
                     'src' => $file
