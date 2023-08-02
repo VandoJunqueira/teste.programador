@@ -31,16 +31,16 @@ Para atender aos requisitos do teste, criei uma API em PHP utilizando o framewor
 
 ## Instalação Passo a passo
 
-### Acesse a pasta backend
-
-```sh
-cd .\backend\
-```
-
 ### Clone Repositório
 
 ```sh
 git clone https://github.com/VandoJunqueira/teste.programador.git
+```
+
+### Acesse a pasta backend
+
+```sh
+cd .\backend\
 ```
 
 ### Crie o Arquivo .env
