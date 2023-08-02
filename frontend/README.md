@@ -1,3 +1,3 @@
 # INSTRUÇÕES DE INSTALAÇÃO
 
-## [BACKEND](docs/CONTRIBUTING.md)
+## [BACKEND](backend/README.md)
