@@ -416,9 +416,12 @@ Descrição: Retorna a lista de todas as marcas cadastradas.
 #### Cadastrar
 
 Endpoint: `POST /api/brands`
+Endpoint: `POST /api/brands`
 
 Descrição: Cadastra uma nova marca no sistema.
+Descrição: Cadastra uma nova marca no sistema.
 
+**Exemplo de resposta de sucesso (200 OK):**
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
@@ -428,7 +431,20 @@ Descrição: Cadastra uma nova marca no sistema.
 }
 ```
 **Exemplo de resposta de erro (422 ERROR):**
+```json
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
+```
+**Exemplo de resposta de erro (422 ERROR):**
 
+```json
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
+```
 ```json
 {
     "status":"error",
@@ -437,13 +453,24 @@ Descrição: Cadastra uma nova marca no sistema.
 ```
 
 #### Exibir
+#### Exibir
 
+Endpoint: `GET /api/brands/{id}`
 Endpoint: `GET /api/brands/{id}`
 
 Descrição: Exibe os detalhes de uma marca específica.
+Descrição: Exibe os detalhes de uma marca específica.
 
 **Exemplo de resposta de sucesso (200 OK):**
+**Exemplo de resposta de sucesso (200 OK):**
 
+```json
+{
+    "status":"success",
+    "message":"Salvo com sucesso!"
+}
+```
+**Exemplo de resposta de erro (422 ERROR):**
 ```json
 {
     "status":"success",
@@ -458,13 +485,23 @@ Descrição: Exibe os detalhes de uma marca específica.
     "message":"Erro ao salvar!"
 }
 ```
+```json
+{
+    "status":"error",
+    "message":"Erro ao salvar!"
+}
+```
 
+#### Editar
 #### Editar
 
 Endpoint: `PUT /api/brands/{id}`
+Endpoint: `PUT /api/brands/{id}`
 
 Descrição: Edita as informações de uma marca existente.
+Descrição: Edita as informações de uma marca existente.
 
+**Exemplo de resposta de sucesso (200 OK):**
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
@@ -477,11 +514,24 @@ Descrição: Edita as informações de uma marca existente.
 }
 ```
 #### Excluir
+```json
+{
+    "id": 2,
+    "name": "LG",
+    "created_at": "2023-08-02T00:57:00.000000Z",
+    "updated_at": "2023-08-02T00:57:00.000000Z",
+    "deleted_at": null
+}
+```
+#### Excluir
 
+Endpoint: `DELETE /api/brands/{id}`
 Endpoint: `DELETE /api/brands/{id}`
 
 Descrição: Exclui uma marca do sistema.
+Descrição: Exclui uma marca do sistema.
 
+**Exemplo de resposta de sucesso (200 OK):**
 **Exemplo de resposta de sucesso (200 OK):**
 
 ```json
@@ -491,7 +541,20 @@ Descrição: Exclui uma marca do sistema.
 }
 ```
 **Exemplo de resposta de erro (404 ERROR):**
+```json
+{
+    "status":"success",
+    "message":"Produto excluido com sucesso!"
+}
+```
+**Exemplo de resposta de erro (404 ERROR):**
 
+```json
+{
+    "status":"error",
+    "message":"Produto não encontrado!"
+}
+```
 ```json
 {
     "status":"error",
