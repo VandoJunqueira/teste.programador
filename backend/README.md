@@ -131,6 +131,91 @@ Endpoint: `GET /api/products`
 
 Descrição: Retorna a lista de todos os eletrodomésticos cadastrados.
 
+**Exemplo de retorno:**
+
+```json
+[
+    {
+        "id": 15,
+        "name": "Cafeteira Expresso Autom\u00e1tica",
+        "description": "Cafeteira autom\u00e1tica que prepara diversos tipos de caf\u00e9 expresso com um toque, moedor de gr\u00e3os integrado e bico de vapor.",
+        "voltage": "bivolt",
+        "brand_id": 5,
+        "value": "900.00",
+        "main_image": "71APp0IvbLL._AC_SL1500_.jpg",
+        "created_at": "2023-08-02T00:57:01.000000Z",
+        "updated_at": "2023-08-02T00:57:03.000000Z",
+        "deleted_at": null,
+        "images": [
+            {
+                "id": 29,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/71APp0IvbLL._AC_SL1500_.jpg",
+                    "name": "71APp0IvbLL._AC_SL1500_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            },
+            {
+                "id": 30,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/61WjyYLSzAL._AC_SL1000_.jpg",
+                    "name": "61WjyYLSzAL._AC_SL1000_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            }
+        ],
+        "brand": {
+            "id": 5,
+            "name": "Philips",
+            "created_at": "2023-08-02T00:57:00.000000Z",
+            "updated_at": null,
+            "deleted_at": null
+        }
+    },
+    {
+        "id": 14,
+        "name": "Ferro de Passar a Vapor",
+        "description": "Ferro a vapor com base antiaderente, sistema de vapor cont\u00ednuo e fun\u00e7\u00e3o de spray.",
+        "voltage": "bivolt",
+        "brand_id": 5,
+        "value": "80.00",
+        "main_image": "71jMtNo9U-L._AC_SL1500_.jpg",
+        "created_at": "2023-08-02T00:57:01.000000Z",
+        "updated_at": "2023-08-02T00:57:03.000000Z",
+        "deleted_at": null,
+        "images": [
+            {
+                "id": 27,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/71jMtNo9U-L._AC_SL1500_.jpg",
+                    "name": "71jMtNo9U-L._AC_SL1500_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            },
+            {
+                "id": 28,
+                "src": {
+                    "full_src": "http://localhost:8989/storage/images/71z8x+AjGsL._AC_SL1500_.jpg",
+                    "name": "71z8x+AjGsL._AC_SL1500_.jpg"
+                },
+                "created_at": "2023-08-02T00:57:03.000000Z",
+                "updated_at": "2023-08-02T00:57:03.000000Z"
+            }
+        ],
+        "brand": {
+            "id": 5,
+            "name": "Philips",
+            "created_at": "2023-08-02T00:57:00.000000Z",
+            "updated_at": null,
+            "deleted_at": null
+        }
+    },
+]
+```
+
 #### Cadastrar
 
 Endpoint: `POST /api/products`
