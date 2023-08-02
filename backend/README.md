@@ -222,11 +222,13 @@ Endpoint: `POST /api/products`
 
 Descrição: Cadastra um novo eletrodoméstico no sistema.
 
-** BODY PARAMS **
+**BODY PARAMS**
 
-```
-name string *required*
-```
+| Parâmetro | Tipo     | Obrigatório | Descrição                  |
+|-----------|----------|-------------|----------------------------|
+| name      | string   | Sim         | Nome do eletrodoméstico    |
+| age       | integer  | Não         | Idade do elemento          |
+| email     | string   | Sim         | E-mail do elemento         |
 
 #### Exibir
 
