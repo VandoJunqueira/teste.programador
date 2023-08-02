@@ -6,7 +6,7 @@ Neste projeto, foi adotada uma abordagem em que o frontend e o backend estão de
 
 Para atender aos requisitos do teste, criei uma API em PHP utilizando o framework Laravel na versão 10 e um banco de dados relacional para o cadastro de eletrodomésticos.
 
-#### [LINK DA DOCUMENTAÇÃO BACKEND](./backend/README.md)
+#### [LINK DA DOCUMENTAÇÃO BACKEND](/backend/README.md)
 
 ## FRONTEND
 
@@ -14,4 +14,4 @@ Para interagir com a API, desenvolvi uma pequena aplicação frontend utilizando
 
 A interface exibe mensagens de erro, avisos e alertas para orientar o usuário durante as operações.
 
-#### [LINK DA DOCUMENTAÇÃO FRONTEND](./frontend/README.md)
+#### [LINK DA DOCUMENTAÇÃO FRONTEND](/frontend/README.md)
