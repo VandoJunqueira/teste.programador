@@ -1,7 +1,7 @@
 # SUMÁRIO
 
-1. [Instalação Passo a passo](https://github.com/VandoJunqueira/teste.programador/tree/main/backend#instala%C3%A7%C3%A3o-passo-a-passo)
-    - 1.1. [Clone Repositório](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#clone-reposit%C3%B3rio)
+1. [Instalação Passo a passo](#instala%C3%A7%C3%A3o-passo-a-passo)
+    - 1.1. [Clone Repositório](#clone-reposit%C3%B3rio)
     - 1.2. [Crie o Arquivo .env](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#crie-o-arquivo-env)
     - 1.3. [Atualize as variáveis de ambiente do arquivo .env](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#atualize-as-vari%C3%A1veis-de-ambiente-do-arquivo-env)
     - 1.4. [Suba os containers do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#suba-os-containers-do-projeto)
