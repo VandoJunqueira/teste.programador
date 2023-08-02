@@ -10,10 +10,10 @@ Para atender aos requisitos do teste, criei uma API em PHP utilizando o framewor
     - 1.5. [Acessar o container](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-container)
     - 1.6. [Instalar as dependências do projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#instalar-as-depend%C3%AAncias-do-projeto)
     - 1.7. [Gerar a key do projeto Laravel](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#gerar-a-key-do-projeto-laravel)
-    - 1.8. [Acessar o projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-projeto)
 2. [Migrations e Seeders](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#migrations-e-seeders)
     - 2.1. [Executar migração](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-migra%C3%A7%C3%A3o)
     - 2.2. [Executar o seeder para popular a tabela](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-o-seeder-para-popular-a-tabela)
+    - 2.3. [Acessar o projeto](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#acessar-o-projeto)
 3. [Rotas da API](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#rotas-da-api)
     - 3.1. [Endpoints Eletrodomésticos](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#endpoints-eletrodom%C3%A9sticos)
         - 3.1.1. [Listar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#listar)
@@ -109,10 +109,6 @@ composer install
 php artisan key:generate
 ```
 
-### Acessar o projeto
-
-[http://localhost:8989](http://localhost:8989)
-
 ## Migrations e Seeders
 
 ### Executar migração
@@ -126,6 +122,10 @@ php artisan migrate
 ```sh
 php artisan db:seed
 ```
+
+### Acessar o projeto
+
+[http://localhost:8989](http://localhost:8989)
 
 ## Rotas da API
 

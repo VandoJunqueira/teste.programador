@@ -6,7 +6,7 @@ A interface exibe mensagens de erro, avisos e alertas para orientar o usuário d
 ### Acesse a pasta backend
 
 ```sh
-cd .\backend\
+cd .\frontend\
 ```
 
 ### Instale as depedencias
