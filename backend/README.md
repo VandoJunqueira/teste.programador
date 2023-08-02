@@ -14,12 +14,12 @@ Para atender aos requisitos do teste, criei uma API em PHP utilizando o framewor
 2. [Migrations e Seeders](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#migrations-e-seeders)
     - 2.1. [Executar migração](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-migra%C3%A7%C3%A3o)
     - 2.2. [Executar o seeder para popular a tabela](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#executar-o-seeder-para-popular-a-tabela)
-3. [Rotas da API]()
-    - 3.1. [Endpoints Eletrodomésticos]()
-        - 3.1.1. [Listar]()
-        - 3.1.2. [Cadastrar]()
-        - 3.1.3. [Exibir]()
-        - 3.1.4. [Editar]()
+3. [Rotas da API](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#rotas-da-api)
+    - 3.1. [Endpoints Eletrodomésticos](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#endpoints-eletrodom%C3%A9sticos)
+        - 3.1.1. [Listar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#listar)
+        - 3.1.2. [Cadastrar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#cadastrar)
+        - 3.1.3. [Exibir](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#exibir)
+        - 3.1.4. [Editar](https://github.com/VandoJunqueira/teste.programador/blob/main/backend/README.md#editar)
         - 3.1.5. [Excluir]()
     - 3.2. [Endpoint Marcas]()
         - 3.2.1 [Listar]()
@@ -147,7 +147,7 @@ Endpoint: `PUT /api/products/{id}`
 
 Descrição: Edita as informações de um eletrodoméstico existente.
 
-#### Editar
+#### Excluir
 
 Endpoint: `DELETE /api/products/{id}`
 
